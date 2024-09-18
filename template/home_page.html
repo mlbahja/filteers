@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+<h1 class="h1">
+    <a href="/">Groupie Tracker</a>
+</h1>
+
+<div class="search-container">
+    <form action="/search" method="get">
+        <input name="s" type="text" id="search" placeholder="Search..." required oninput="showSuggestions(this.value)">
+    </form>
+    <div id="suggestions"></div>
+</div>
+<form class="filter-form" action="/filter" method="post">
+    <!-- Creation Date Range -->
+    <div>
+        <label>Creation Date Range:</label><br>
+        <input type="range" id="creation_date_min" name="creation_date_min" min="1958" max="2015" value="1958" oninput="this.nextElementSibling.value = this.value">
+        <output>1958</output>
+        <label for="creation_date_min">Min</label><br>
+
+        <input type="range" id="creation_date_max" name="creation_date_max" min="1958" max="2015" value="2015" oninput="this.nextElementSibling.value = this.value">
+        <output>2015</output>
+        <label for="creation_date_max">Max</label><br>
+  
+
+    <!-- First Album Date Range -->
+    <!-- <div> -->
+        <label>First Album Date Range:</label><br>
+        <input type="range" id="first_album_min" name="first_album_min" min="1963" max="1972" value="1963" oninput="this.nextElementSibling.value = this.value">
+        <output>1963</output>
+        <label for="first_album_min">Min</label><br>
+
+        <input type="range" id="first_album_max" name="first_album_max" min="1958" max="1972" value="1972" oninput="this.nextElementSibling.value = this.value">
+        <output>1972</output>
+        <label for="first_album_max">Max</label><br>
+    </div>
+
+    <!-- Number of Members -->
+    <div class="range-container">
+        <label>Number of Members:</label><br>
+
+        <input type="checkbox" name="num_members_1" id="members_1" value="1">
+        <label for="members_1">1</label>
+        <input type="checkbox" name="num_members_2" id="members_2" value="2">
+        <label for="members_2">2</label>
+        <input type="checkbox" name="num_members_3" id="members_3" value="3">
+        <label for="members_3">3</label><br>
+
+        <input type="checkbox" name="num_members_4" id="members_4" value="4">
+        <label for="members_4">4</label>
+        <input type="checkbox" name="num_members_5" id="members_5" value="5">
+        <label for="members_5">5</label>
+        <input type="checkbox" name="num_members_6" id="members_6" value="6">
+        <label for="members_6">6</label><br>
+
+        <input type="checkbox" name="num_members_7" id="members_7" value="7">
+        <label for="members_7">7</label>
+        <input type="checkbox" name="num_members_8" id="members_8" value="8">
+        <label for="members_8">8</label>
+    </div>
+
+    <!-- City Selection -->
+    <h1 class="select-city">Select a City:</h1>
+    <select name="city">
+        <option value="">--Please choose a city--</option>
+        {{ range  .Loc }}
+        <option value="{{ . }}">{{ . }}</option>
+        {{ end }}
+    </select>
+
+    <button type="submit">Filter</button>
+</form>
+
+    <section class="cart-art">
+        <div class="data">
+            {{ range .Da }}
+                <a href="/profil?id={{ .ID }}">
+                    <div>
+                        <img src="{{ .Image }}" alt="{{ .Name }}" class="Image"><br>
+                        <span class="name">{{ .Name }}</span><br>
+                        <span class="CreationDate">{{ .CreationDate }}</span><br>
+                        <span class="FirstAlbum">{{ .FirstAlbum }}</span>
+                    </div>
+                </a>
+            {{ end }}
+        </div>
+    </section>
+<script src="template/script.js"></script>
+<script>
+    function updateRange() {
+        const range = document.getElementById('range');
+        const rangeValue = document.getElementById('rangeValue');
+        
+        // Update displayed value
+        rangeValue.textContent = range.value;
+    }
+</script>
+</body>

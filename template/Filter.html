@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<h1 class="h1">
+    <a href="/">Groupie Tracker</a>
+</h1>
+<section class="cart-art">
+    <div class="data">
+        {{ range .}}
+        <a href="/profil?id={{ .ID }}">
+            <div>
+                <img src="{{.Image}}" alt="{{ .Name}}" class="Image"><br>
+                <span class="name">{{ .Name }}</span><br>
+            </div>
+        </a>
+        {{ end }}
+    </div>
+
+</section>

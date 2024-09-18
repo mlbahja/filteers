@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Styles specifically for the filter form */
+.filter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 220px;
+}
+
+/* Style each div inside the filter form */
+.filter-form div {
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+/* Style the labels and inputs */
+.filter-form label {
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+
+.filter-form input {
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the button in the filter form */
+.filter-form button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-form button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.h1{
+    background-color: #847ff1;
+    padding: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+.select-city {
+    font-size: 150%;
+    align-items: center;
+}
+
+
+h1 a,
+.h1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.search-container {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#search {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#suggestions {
+    margin-top: 10px;
+}
+
+#suggestions div {
+    padding: 5px;
+    border-bottom: 1px solid #000000;
+}
+
+#suggestions a {
+    text-decoration: none;
+    color: #333;
+}
+
+.cart-art {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.data {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.data>a {
+    text-decoration: none;
+    color: #333;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.data>a:hover {
+    transform: translateY(-5px);
+}
+
+.Image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    margin-top: 10px;
+}
+
+.CreationDate,
+.FirstAlbum,
+.Type {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #6f7bf5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #000;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
